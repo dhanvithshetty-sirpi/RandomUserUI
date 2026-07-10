@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random User Directory</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Random User Directory</h1>
+      <p>Browse random users from around the world</p>
+    </header>
+
+    <div class="controls">
+      <div class="controls-row">
+        <div class="search-wrapper">
+          <input type="text" id="searchInput" placeholder="Search by name..." aria-label="Search by name">
+        </div>
+        <div class="filter-wrapper">
+          <select id="genderFilter" aria-label="Filter by gender">
+            <option value="all">All Genders</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <button id="generateBtn" class="btn btn-primary">Generate New Users</button>
+      </div>
+      <div class="controls-row secondary-row">
+        <label class="favorites-toggle">
+          <input type="checkbox" id="favoritesOnly">
+          <span>Show favorites only</span>
+          <span id="favCount" class="fav-count">0</span>
+        </label>
+      </div>
+    </div>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Fetching users...</p>
+    </div>
+
+    <div id="error" class="error hidden">
+      <p id="errorMessage">Something went wrong.</p>
+      <button id="retryBtn" class="btn btn-secondary">Try Again</button>
+    </div>
+
+    <div id="usersContainer" class="users-grid"></div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
